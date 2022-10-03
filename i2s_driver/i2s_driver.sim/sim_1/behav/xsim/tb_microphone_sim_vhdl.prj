@@ -1,7 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"../../../../i2s_driver.srcs/sources_1/new/i2s_master.vhd" \
-"../../../../i2s_driver.srcs/sim_1/imports/comp3601-audio-project/tb_microphone_sim.vhd" \
-
-# Do not sort compile order
-nosort
