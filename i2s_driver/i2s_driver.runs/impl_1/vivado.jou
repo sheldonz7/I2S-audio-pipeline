@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Mon Oct  3 09:33:38 2022
+# Process ID: 5448
+# Current directory: E:/OneDrive - UNSW/Computer Engineering/COMP3601/i2s_driver/i2s_driver.runs/impl_1
+# Command line: vivado.exe -log design_1_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source design_1_wrapper.tcl -notrace
+# Log file: E:/OneDrive - UNSW/Computer Engineering/COMP3601/i2s_driver/i2s_driver.runs/impl_1/design_1_wrapper.vdi
+# Journal file: E:/OneDrive - UNSW/Computer Engineering/COMP3601/i2s_driver/i2s_driver.runs/impl_1\vivado.jou
+# Running On: DESKTOP-6CAVDAS, OS: Windows, CPU Frequency: 3600 MHz, CPU Physical cores: 16, Host memory: 34306 MB
+#-----------------------------------------------------------
+source design_1_wrapper.tcl -notrace

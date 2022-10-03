@@ -1,0 +1,314 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Mon Oct  3 09:31:32 2022
+# Process ID: 17804
+# Current directory: E:/OneDrive - UNSW/Computer Engineering/COMP3601/i2s_driver/i2s_driver.runs/design_1_audio_pipeline_0_0_synth_1
+# Command line: vivado.exe -log design_1_audio_pipeline_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_audio_pipeline_0_0.tcl
+# Log file: E:/OneDrive - UNSW/Computer Engineering/COMP3601/i2s_driver/i2s_driver.runs/design_1_audio_pipeline_0_0_synth_1/design_1_audio_pipeline_0_0.vds
+# Journal file: E:/OneDrive - UNSW/Computer Engineering/COMP3601/i2s_driver/i2s_driver.runs/design_1_audio_pipeline_0_0_synth_1\vivado.jou
+# Running On: DESKTOP-6CAVDAS, OS: Windows, CPU Frequency: 3600 MHz, CPU Physical cores: 16, Host memory: 34306 MB
+#-----------------------------------------------------------
+source design_1_audio_pipeline_0_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx_2022.1/Vivado/2022.1/data/ip'.
+Command: synth_design -top design_1_audio_pipeline_0_0 -part xck26-sfvc784-2LV-c -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xck26'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xck26'
+INFO: [Device 21-403] Loading part xck26-sfvc784-2LV-c
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 16792
+WARNING: [Synth 8-9501] generate block is allowed only inside loop and conditional generate in SystemVerilog mode [D:/Xilinx_2022.1/Vivado/2022.1/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:4023]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2096.559 ; gain = 320.250
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'design_1_audio_pipeline_0_0' [e:/OneDrive - UNSW/Computer Engineering/COMP3601/i2s_driver/i2s_driver.gen/sources_1/bd/design_1/ip/design_1_audio_pipeline_0_0/synth/design_1_audio_pipeline_0_0.vhd:92]
+	Parameter PCM_PRECISION bound to: 18 - type: integer 
+	Parameter PCM_WIDTH bound to: 24 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter FIFO_DEPTH bound to: 12 - type: integer 
+	Parameter TRANSFER_LEN bound to: 5 - type: integer 
+	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S00_AXI_ADDR_WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-3491] module 'audio_pipeline' declared at 'E:/OneDrive - UNSW/Computer Engineering/COMP3601/i2s_driver/i2s_driver.srcs/sources_1/imports/comp3601-audio-project/audio_pipeline.vhd:8' bound to instance 'U0' of component 'audio_pipeline' [e:/OneDrive - UNSW/Computer Engineering/COMP3601/i2s_driver/i2s_driver.gen/sources_1/bd/design_1/ip/design_1_audio_pipeline_0_0/synth/design_1_audio_pipeline_0_0.vhd:184]
+INFO: [Synth 8-638] synthesizing module 'audio_pipeline' [E:/OneDrive - UNSW/Computer Engineering/COMP3601/i2s_driver/i2s_driver.srcs/sources_1/imports/comp3601-audio-project/audio_pipeline.vhd:65]
+INFO: [Synth 8-638] synthesizing module 'ctrl_bus' [E:/OneDrive - UNSW/Computer Engineering/COMP3601/i2s_driver/i2s_driver.srcs/sources_1/imports/comp3601-audio-project/ctrl_bus.vhd:93]
+INFO: [Synth 8-226] default block is never used [E:/OneDrive - UNSW/Computer Engineering/COMP3601/i2s_driver/i2s_driver.srcs/sources_1/imports/comp3601-audio-project/ctrl_bus.vhd:250]
+INFO: [Synth 8-226] default block is never used [E:/OneDrive - UNSW/Computer Engineering/COMP3601/i2s_driver/i2s_driver.srcs/sources_1/imports/comp3601-audio-project/ctrl_bus.vhd:422]
+INFO: [Synth 8-256] done synthesizing module 'ctrl_bus' (0#1) [E:/OneDrive - UNSW/Computer Engineering/COMP3601/i2s_driver/i2s_driver.srcs/sources_1/imports/comp3601-audio-project/ctrl_bus.vhd:93]
+INFO: [Synth 8-638] synthesizing module 'i2s_master' [E:/OneDrive - UNSW/Computer Engineering/COMP3601/i2s_driver/i2s_driver.srcs/sources_1/new/i2s_master.vhd:34]
+INFO: [Synth 8-256] done synthesizing module 'i2s_master' (0#1) [E:/OneDrive - UNSW/Computer Engineering/COMP3601/i2s_driver/i2s_driver.srcs/sources_1/new/i2s_master.vhd:34]
+INFO: [Synth 8-638] synthesizing module 'fifo' [E:/OneDrive - UNSW/Computer Engineering/COMP3601/i2s_driver/i2s_driver.srcs/sources_1/imports/comp3601-audio-project/fifo.vhd:23]
+INFO: [Synth 8-256] done synthesizing module 'fifo' (0#1) [E:/OneDrive - UNSW/Computer Engineering/COMP3601/i2s_driver/i2s_driver.srcs/sources_1/imports/comp3601-audio-project/fifo.vhd:23]
+WARNING: [Synth 8-614] signal 'rst' is read in the process but is not in the sensitivity list [E:/OneDrive - UNSW/Computer Engineering/COMP3601/i2s_driver/i2s_driver.srcs/sources_1/imports/comp3601-audio-project/audio_pipeline.vhd:185]
+INFO: [Synth 8-256] done synthesizing module 'audio_pipeline' (0#1) [E:/OneDrive - UNSW/Computer Engineering/COMP3601/i2s_driver/i2s_driver.srcs/sources_1/imports/comp3601-audio-project/audio_pipeline.vhd:65]
+INFO: [Synth 8-256] done synthesizing module 'design_1_audio_pipeline_0_0' (0#1) [e:/OneDrive - UNSW/Computer Engineering/COMP3601/i2s_driver/i2s_driver.gen/sources_1/bd/design_1/ip/design_1_audio_pipeline_0_0/synth/design_1_audio_pipeline_0_0.vhd:92]
+WARNING: [Synth 8-7129] Port clk in module i2s_master is either unconnected or has no load
+WARNING: [Synth 8-7129] Port fifo_full in module i2s_master is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWPROT[2] in module ctrl_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWPROT[1] in module ctrl_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWPROT[0] in module ctrl_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_ARPROT[2] in module ctrl_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_ARPROT[1] in module ctrl_bus is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_ARPROT[0] in module ctrl_bus is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2191.625 ; gain = 415.316
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2209.543 ; gain = 433.234
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2209.543 ; gain = 433.234
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 2209.543 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2300.844 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.043 . Memory (MB): peak = 2318.742 ; gain = 17.898
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2318.742 ; gain = 542.434
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xck26-sfvc784-2LV-c
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2318.742 ; gain = 542.434
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2318.742 ; gain = 542.434
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'y1_reg' in module 'i2s_master'
+INFO: [Synth 8-6159] Found Keep on FSM register 'y1_reg' in module 'i2s_master', re-encoding will not be performed
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+*
+                  s_init |                               00 |                               00
+                  s_read |                               01 |                               01
+                   s_pad |                               10 |                               10
+---------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2318.742 ; gain = 542.434
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 2     
+	   2 Input   13 Bit       Adders := 2     
+	   2 Input   12 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 10    
+	               13 Bit    Registers := 2     
+	                5 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 9     
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 6     
+	   8 Input   32 Bit        Muxes := 6     
+	   4 Input   32 Bit        Muxes := 2     
+	   4 Input    2 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 6     
+	   4 Input    1 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 1248 (col length:96)
+BRAMs: 288 (col length: RAMB18 96 RAMB36 48)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-7129] Port s00_axi_awprot[2] in module design_1_audio_pipeline_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axi_awprot[1] in module design_1_audio_pipeline_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axi_awprot[0] in module design_1_audio_pipeline_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axi_arprot[2] in module design_1_audio_pipeline_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axi_arprot[1] in module design_1_audio_pipeline_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axi_arprot[0] in module design_1_audio_pipeline_0_0 is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2318.742 ; gain = 542.434
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++----------------------------+----------------------+-----------+----------------------+----------------+
+|Module Name                 | RTL Object           | Inference | Size (Depth x Width) | Primitives     | 
++----------------------------+----------------------+-----------+----------------------+----------------+
+|design_1_audio_pipeline_0_0 | U0/inst_fifo/mem_reg | Implied   | 4 K x 32             | RAM64M8 x 320  | 
++----------------------------+----------------------+-----------+----------------------+----------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 2767.043 ; gain = 990.734
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 2768.984 ; gain = 992.676
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping Report
++----------------------------+----------------------+-----------+----------------------+----------------+
+|Module Name                 | RTL Object           | Inference | Size (Depth x Width) | Primitives     | 
++----------------------------+----------------------+-----------+----------------------+----------------+
+|design_1_audio_pipeline_0_0 | U0/inst_fifo/mem_reg | Implied   | 4 K x 32             | RAM64M8 x 320  | 
++----------------------------+----------------------+-----------+----------------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 2797.602 ; gain = 1021.293
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 2807.527 ; gain = 1031.219
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 2807.527 ; gain = 1031.219
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 2807.527 ; gain = 1031.219
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 2807.527 ; gain = 1031.219
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 2807.527 ; gain = 1031.219
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 2807.527 ; gain = 1031.219
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |CARRY8  |    16|
+|2     |LUT1    |    27|
+|3     |LUT2    |    72|
+|4     |LUT3    |    28|
+|5     |LUT4    |    35|
+|6     |LUT5    |    49|
+|7     |LUT6    |   720|
+|8     |MUXF7   |   256|
+|9     |MUXF8   |   128|
+|10    |RAM64M8 |   320|
+|11    |FDCE    |    32|
+|12    |FDRE    |   375|
+|13    |FDSE    |     4|
+|14    |FD      |     2|
++------+--------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 2807.527 ; gain = 1031.219
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 7 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:00:33 . Memory (MB): peak = 2807.527 ; gain = 922.020
+Synthesis Optimization Complete : Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 2807.527 ; gain = 1031.219
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.039 . Memory (MB): peak = 2819.574 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 722 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2846.754 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 322 instances were transformed.
+  FD_1 => FDRE (inverted pins: C): 2 instances
+  RAM64M8 => RAM64M8 (RAMD64E(x8)): 320 instances
+
+Synth Design complete, checksum: e9b668fc
+INFO: [Common 17-83] Releasing license: Synthesis
+34 Infos, 17 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:40 ; elapsed = 00:00:44 . Memory (MB): peak = 2846.754 ; gain = 1208.746
+INFO: [Common 17-1381] The checkpoint 'E:/OneDrive - UNSW/Computer Engineering/COMP3601/i2s_driver/i2s_driver.runs/design_1_audio_pipeline_0_0_synth_1/design_1_audio_pipeline_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_1_audio_pipeline_0_0, cache-ID = e27d316d2d5fc138
+INFO: [Coretcl 2-1174] Renamed 4 cell refs.
+INFO: [Common 17-1381] The checkpoint 'E:/OneDrive - UNSW/Computer Engineering/COMP3601/i2s_driver/i2s_driver.runs/design_1_audio_pipeline_0_0_synth_1/design_1_audio_pipeline_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file design_1_audio_pipeline_0_0_utilization_synth.rpt -pb design_1_audio_pipeline_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Oct  3 09:32:27 2022...

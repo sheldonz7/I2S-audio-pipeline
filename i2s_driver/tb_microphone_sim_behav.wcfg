@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_microphone_sim_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_microphone_sim" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="2,171.001 ns"></ZoomEndTime>
+      <Cursor1Time time="0.010 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="271"></NameColumnWidth>
+      <ValueColumnWidth column_width="94"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="18" />
+   <wvobject fp_name="/tb_microphone_sim/ref_clk" type="logic">
+      <obj_property name="ElementShortName">ref_clk</obj_property>
+      <obj_property name="ObjectShortName">ref_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_microphone_sim/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_microphone_sim/data" type="logic">
+      <obj_property name="ElementShortName">data</obj_property>
+      <obj_property name="ObjectShortName">data</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_microphone_sim/clk_period" type="other">
+      <obj_property name="ElementShortName">clk_period</obj_property>
+      <obj_property name="ObjectShortName">clk_period</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_microphone_sim/ref_clk_period" type="other">
+      <obj_property name="ElementShortName">ref_clk_period</obj_property>
+      <obj_property name="ObjectShortName">ref_clk_period</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_microphone_sim/uut/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_microphone_sim/uut/clk_1" type="logic">
+      <obj_property name="ElementShortName">clk_1</obj_property>
+      <obj_property name="ObjectShortName">clk_1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_microphone_sim/uut/i2s_lrcl" type="logic">
+      <obj_property name="ElementShortName">i2s_lrcl</obj_property>
+      <obj_property name="ObjectShortName">i2s_lrcl</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_microphone_sim/uut/i2s_dout" type="logic">
+      <obj_property name="ElementShortName">i2s_dout</obj_property>
+      <obj_property name="ObjectShortName">i2s_dout</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_microphone_sim/uut/i2s_bclk" type="logic">
+      <obj_property name="ElementShortName">i2s_bclk</obj_property>
+      <obj_property name="ObjectShortName">i2s_bclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_microphone_sim/uut/fifo_din" type="array">
+      <obj_property name="ElementShortName">fifo_din[31:0]</obj_property>
+      <obj_property name="ObjectShortName">fifo_din[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_microphone_sim/uut/fifo_w_stb" type="logic">
+      <obj_property name="ElementShortName">fifo_w_stb</obj_property>
+      <obj_property name="ObjectShortName">fifo_w_stb</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_microphone_sim/uut/fifo_full" type="logic">
+      <obj_property name="ElementShortName">fifo_full</obj_property>
+      <obj_property name="ObjectShortName">fifo_full</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_microphone_sim/uut/counter" type="other">
+      <obj_property name="ElementShortName">counter</obj_property>
+      <obj_property name="ObjectShortName">counter</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_microphone_sim/uut/y1" type="other">
+      <obj_property name="ElementShortName">y1</obj_property>
+      <obj_property name="ObjectShortName">y1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_microphone_sim/uut/DATA_WIDTH" type="other">
+      <obj_property name="ElementShortName">DATA_WIDTH</obj_property>
+      <obj_property name="ObjectShortName">DATA_WIDTH</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_microphone_sim/uut/PCM_PRECISION" type="other">
+      <obj_property name="ElementShortName">PCM_PRECISION</obj_property>
+      <obj_property name="ObjectShortName">PCM_PRECISION</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_microphone_sim/uut/sig_din" type="array">
+      <obj_property name="ElementShortName">sig_din[31:0]</obj_property>
+      <obj_property name="ObjectShortName">sig_din[31:0]</obj_property>
+   </wvobject>
+</wave_config>

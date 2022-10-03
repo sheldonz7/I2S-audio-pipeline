@@ -1,0 +1,7 @@
+0.7
+2020.2
+Apr 18 2022
+16:05:34
+E:/OneDrive - UNSW/Computer Engineering/COMP3601/i2s_driver/i2s_driver.sim/sim_1/behav/xsim/glbl.v,1649976174,verilog,,,,glbl,,axi_vip_v1_1_12;smartconnect_v1_0;xilinx_vip;zynq_ultra_ps_e_vip_v1_0_12,,,,,,
+E:/OneDrive - UNSW/Computer Engineering/COMP3601/i2s_driver/i2s_driver.srcs/sim_1/imports/comp3601-audio-project/tb_microphone_sim.vhd,1664492826,vhdl,,,,tb_microphone_sim,,,,,,,,
+E:/OneDrive - UNSW/Computer Engineering/COMP3601/i2s_driver/i2s_driver.srcs/sources_1/new/i2s_master.vhd,1664751342,vhdl,E:/OneDrive - UNSW/Computer Engineering/COMP3601/i2s_driver/i2s_driver.srcs/sim_1/imports/comp3601-audio-project/tb_microphone_sim.vhd,,,i2s_master,,,,,,,,

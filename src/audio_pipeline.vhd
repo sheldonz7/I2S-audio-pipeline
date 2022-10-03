@@ -95,7 +95,7 @@ begin
     --------------------------------------------------
     -- Control bus
     --------------------------------------------------
-    inst_ctrl_bus : ctrl_bus
+    inst_ctrl_bus : entity ctrl_bus
 	generic map (
 		C_S_AXI_DATA_WIDTH	=> C_S00_AXI_DATA_WIDTH,
 		C_S_AXI_ADDR_WIDTH	=> C_S00_AXI_ADDR_WIDTH
@@ -134,7 +134,7 @@ begin
     --------------------------------------------------
     -- I2S Master
     --------------------------------------------------
-    inst_i2s_master : i2s_master
+    inst_i2s_master : entity i2s_master
     generic map (
         DATA_WIDTH      => DATA_WIDTH,
         PCM_PRECISION   => PCM_PRECISION
@@ -155,7 +155,7 @@ begin
     --------------------------------------------------
     -- FIFO
     --------------------------------------------------
-    inst_fifo : fifo 
+    inst_fifo : entity fifo 
     generic map (
         data_width => DATA_WIDTH,
         fifo_depth => FIFO_DEPTH
