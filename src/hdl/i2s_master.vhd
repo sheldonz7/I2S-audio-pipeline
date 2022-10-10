@@ -76,10 +76,11 @@ begin
         if (falling_edge(clk_1)) then
             case y1 is
                 when S_INIT =>
-                    
                     if (counter = 32) then
-                        fifo_din <= v_sample_buf;
-                        fifo_w_stb <= '1';
+                        if (fifo_full = '0') then
+                            fifo_din <= v_sample_buf;
+                            fifo_w_stb <= '1';
+                        end if;
                         v_sample_buf := (others => '0');
                     end if;
                     lrctr <= not lrctr;
