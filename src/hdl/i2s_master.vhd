@@ -34,19 +34,30 @@ end i2s_master;
 architecture rtl of i2s_master is
     -- audio sample buffer
     --signal sample_buf : std_logic_vector(DATA_WIDTH-1 downto 0);
+    signal sig_bclk   : std_logic;
     signal lrctr      : std_logic := '0';
     signal counter    : integer := 0;
-
+    signal en_w_stb   : std_logic := '0';
+    signal sig_din    : std_logic_vector(DATA_WIDTH-1 downto 0);
     --signal lrcl       : std_logic := '0';
     type i2s_state_type is (S_INIT, S_READ, S_PAD);
     signal y1 : i2s_state_type := S_INIT;
     ATTRIBUTE keep : boolean; 
 	ATTRIBUTE keep of y1 : SIGNAL IS true;
 begin
+    -- clock division
+    -- 49.0152 MHz to 3.072 Mhz
+    clk_div: entity work.clock_divider
+    port map (
+        clk_in => clk_1,
+        div_rate => 8,
+        clk_out => sig_bclk
+    );
+
     -- fsm
-    fsm_transitions: process (clk_1) is
+    fsm_transitions: process (sig_bclk) is
     begin
-        if (falling_edge(clk_1)) then
+        if (falling_edge(sig_bclk)) then
             case y1 is
                 when S_INIT =>
                     counter <= 0;
@@ -68,18 +79,19 @@ begin
                     
                        
     -- reading left channel for 32 bclks
-    read_sample: process (clk_1) is
+    read_sample: process (sig_bclk) is
     variable v_sample_buf : std_logic_vector(DATA_WIDTH-1 downto 0) := (others => '0');
     begin
         -- initialize control signal and output
-        fifo_w_stb <= '0';
-        if (falling_edge(clk_1)) then
+        sig_din <= v_sample_buf;
+        en_w_stb <= '0';
+        if (falling_edge(sig_bclk)) then
             case y1 is
                 when S_INIT =>
                     if (counter = 32) then
                         if (fifo_full = '0') then
                             fifo_din <= v_sample_buf;
-                            fifo_w_stb <= '1';
+                            en_w_stb <= '1';
                         end if;
                         v_sample_buf := (others => '0');
                     end if;
@@ -95,7 +107,16 @@ begin
         end if;
     end process;
     
+    w_stb: process(en_w_stb, clk) is
+    begin
+        if (clk'event) then
+            fifo_w_stb <= '0';
+        elsif(en_w_stb = '1') then
+            fifo_w_stb <= '1';
+        end if;
+    end process;
+
     i2s_lrcl <= lrctr;
-    i2s_bclk <= clk_1;
+    i2s_bclk <= sig_bclk;
     
 end rtl;
