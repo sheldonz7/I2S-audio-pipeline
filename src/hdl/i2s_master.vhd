@@ -109,8 +109,9 @@ begin
     
     w_stb: process(en_w_stb, clk) is
     begin
-        if (clk'event) then
-            fifo_w_stb <= '0';
+        if (falling_edge(clk)) then
+              fifo_w_stb <= '0';
+        elsif (rising_edge(clk)) then
         elsif(en_w_stb = '1') then
             fifo_w_stb <= '1';
         end if;
