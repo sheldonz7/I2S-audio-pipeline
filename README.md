@@ -15,3 +15,11 @@ dtc -@ -O dtb -o pl.dtbo pl.dtsi
 ## petalinux
 - run the sdk.sh to install sdk
 - source the environment variable, source <path-to-env>, default: /opt/petalinux/2021.1/environment-setup-cortexa72-cortexa53-xilinx-linux 
+
+
+## configure FPGA PL
+copy the .bin and .dtbo to ~/lib/firmware/xilinx
+xmutil listapps
+xmutil unloadapp
+xmutil loadapp <app_name>
+
