@@ -29,5 +29,7 @@ IMP NOTES about Output after running ./audio_i2s
 
 - The 18 LSB is the value and is displayed in hex format
     - However, the way it is represented, the LSB is on the left end
+    -  It is displayed after the colon
 - The 14 MSB then is the counter and displayd in decimal format
     -  However, the way it is represented, the MSB is on the right end
+    - It is diaplyed in square brackets
