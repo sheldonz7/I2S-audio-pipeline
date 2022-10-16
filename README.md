@@ -23,3 +23,11 @@ xmutil listapps
 xmutil unloadapp
 xmutil loadapp <app_name>
 
+IMP NOTES about Output after running ./audio_i2s
+
+00000000 00000011 11111111 11111110  -> [8191]: 3c000 (93p)
+
+- The 18 LSB is the value and is displayed in hex format
+    - However, the way it is represented, the LSB is on the left end
+- The 14 MSB then is the counter and displayd in decimal format
+    -  However, the way it is represented, the MSB is on the right end
