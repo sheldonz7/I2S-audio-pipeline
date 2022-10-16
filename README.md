@@ -33,3 +33,5 @@ IMP NOTES about Output after running ./audio_i2s
 - The 14 MSB then is the counter and displayd in decimal format
     -  However, the way it is represented, the MSB is on the right end
     - It is diaplyed in square brackets
+    
+ The 93p signifies the signal strength of the value divided by 18 1's (3ffff) in percentage 
