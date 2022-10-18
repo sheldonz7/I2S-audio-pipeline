@@ -66,9 +66,6 @@ begin
     else
     	data <= '1';
     end if;
-
-    
-     
   end process;
 end behavioral;
   	

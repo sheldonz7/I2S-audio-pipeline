@@ -37,10 +37,10 @@ architecture rtl of i2s_master is
     signal sig_bclk   : std_logic;
     signal lrctr      : std_logic := '0';
     signal counter    : integer := 0;
-    signal en_w_stb   : std_logic := '0';
     signal sig_din    : std_logic_vector(DATA_WIDTH-1 downto 0);
+    signal sig_pad_buffer : std_logic_vector(DATA_WIDTH - PCM_PRECISION - 1 downto 0) := (others => '0');
     --signal lrcl       : std_logic := '0';
-    type i2s_state_type is (S_INIT, S_READ, S_PAD);
+    type i2s_state_type is (S_INIT, S_READ, S_WRITE, S_PAD);
     signal y1 : i2s_state_type := S_INIT;
     ATTRIBUTE keep : boolean; 
 	ATTRIBUTE keep of y1 : SIGNAL IS true;
@@ -55,69 +55,90 @@ begin
     );
 
     -- fsm
-    fsm_transitions: process (sig_bclk) is
+    fsm_transitions: process (clk) is
     begin
-        if (falling_edge(sig_bclk)) then
+        if (falling_edge(clk)) then
             case y1 is
                 when S_INIT =>
-                    counter <= 0;
                     y1 <= S_READ;
                 when S_READ =>
-                    counter <= counter + 1;
-                    if (counter = 17) then
-                        y1 <= S_PAD;
+                    if (counter = PCM_PRECISION + 1) then
+                        y1 <= S_WRITE;
                     end if;
+                when S_WRITE =>
+                    y1 <= S_PAD;           
                 when S_PAD =>
-                    counter <= counter + 1;
-                    if (counter = 31) then
-                        y1 <= S_INIT;
+                    if (counter = 1) then
+                        y1 <= S_READ;
                     end if;
             end case;
         end if;
     end process;
-                    
-                    
+          
+          
+    counter_inc: process(sig_bclk) is
+    begin
+        if (rising_edge(sig_bclk)) then
+            if (counter = 32) then
+                counter <= 1;
+            else
+                counter <= counter + 1;
+            end if;
+        end if;
+    end process;
+    -- write fsm
+--    wr_fsm_transitions: process (clk) is
+--    begin
+--        if (falling_edge(clk)) then
+----            case y2 is
+----                when S_INIT =>
+----                    if (en_w_stb = '1') then
+----                        y2 <= S_WRITE;
+----                    end if;
+----                when S_WRITE =>
+----                    Y2 <= S_INIT;
+----            end case;
+            
+--        end if;
+--    end process;
+    
+    
+    
                        
     -- reading left channel for 32 bclks
-    read_sample: process (sig_bclk) is
+    read_sample: process (y1, sig_bclk, counter) is
     variable v_sample_buf : std_logic_vector(DATA_WIDTH-1 downto 0) := (others => '0');
     begin
         -- initialize control signal and output
-        sig_din <= v_sample_buf;
-        en_w_stb <= '0';
-        if (falling_edge(sig_bclk)) then
-            case y1 is
-                when S_INIT =>
-                    if (counter = 32) then
-                        if (fifo_full = '0') then
-                            fifo_din <= v_sample_buf;
-                            en_w_stb <= '1';
-                        end if;
-                        v_sample_buf := (others => '0');
-                    end if;
-                    lrctr <= not lrctr;
-                when S_READ =>
-                    -- shift in one bit from the data input to the buffer
+        fifo_w_stb <= '0';
+        case y1 is
+            when S_INIT =>
+                
+            when S_READ =>
+                -- shift in one bit from the data input to the buffer
+                if (falling_edge(sig_bclk)) then
                     v_sample_buf := v_sample_buf(DATA_WIDTH-2 downto 0) & i2s_dout;
-                    
-                when S_PAD =>
-                    v_sample_buf := v_sample_buf(DATA_WIDTH-2 downto 0) & '0';
-                   
-            end case;
-        end if;
+                end if;
+            when S_WRITE =>
+                v_sample_buf := v_sample_buf(PCM_PRECISION - 1 downto 0) & sig_pad_buffer;
+                if (fifo_full = '0') then
+                      fifo_din <= v_sample_buf;
+                      fifo_w_stb <= '1';
+                end if;
+                v_sample_buf := (others => '0');    
+            when S_PAD =>
+                if (falling_edge(sig_bclk) and counter = 32) then
+                    lrctr <= not lrctr;
+                end if;
+        end case;
+        
+        sig_din <= v_sample_buf;
     end process;
     
-    w_stb: process(en_w_stb, clk) is
-    begin
-        if (falling_edge(clk)) then
-              fifo_w_stb <= '0';
-        elsif (rising_edge(clk)) then
-        elsif(en_w_stb = '1') then
-            fifo_w_stb <= '1';
-        end if;
-    end process;
+
+                    
+                
 
     i2s_lrcl <= lrctr;
     i2s_bclk <= sig_bclk;
-    
 end rtl;

@@ -28,14 +28,14 @@
 #include "axi_dma.h"
 
 // AXI Stream definitions
-#define AXI_DMA_S2MM_PADDR          0xa0000000 // Match this with your AXI DMA Control bus
+#define AXI_DMA_S2MM_PADDR          0xa0010000 // Match this with your AXI DMA Control bus
 #define AXI_DMA_S2MM_SIZE           0x0000ffff
 #define AXI_DMA_RECV_BUFFER_PADDR   0x0f000000
 #define AXI_DMA_RECV_BUFFER_SIZE    65535
 #define TRANSFER_LEN 256
 
 // audio_i2s module definitions
-#define AUDIO_I2S_PADDR             0xa0010000 // Match this wiht your Control bus for your module
+#define AUDIO_I2S_PADDR             0xa0000000 // Match this wiht your Control bus for your module
 #define AUDIO_I2S_SIZE              0xffff
 #define AUDIO_I2S_CR                0 << 2
 #define AUDIO_I2S_SR                1 << 2
