@@ -38,3 +38,6 @@ IMP NOTES about Output after running ./audio_i2s
     - It is diaplyed in square brackets
     
  The 93p signifies the signal strength of the value divided by 18 1's (3ffff) in percentage 
+ 
+ ## Another way to access files on the USB drive
+ - Go to /run/media/sda1
