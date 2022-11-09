@@ -58,12 +58,6 @@ void parsemem(void* virtual_address, int word_count) {
     for (offset = 0; offset < word_count; offset++) {
         sample_value = p[offset] & ((1<<18)-1);
         sample_count = p[offset] >> 18;
-
-        for (int i = 0; i < 4; i++) {
-            // bin(b[offset*4+i]);
-            // printf(" ");
-        }
-        // printf(" -> [%d]: %02x (%dp)\n", sample_count, sample_value, sample_value*100/((1<<18)-1));
         fprintf(fptr, "%d\n", (int) sample_value);
 
     }
@@ -112,7 +106,6 @@ int main() {
     fptr = fopen("sample.txt", "w");
 
     uint32_t frames[TRANSFER_RUNS][TRANSFER_LEN] = {0};
-    uint32_t *buffer = (uint32_t*) malloc(NUM_CHANNELS * SAMPLE_RATE * RECORD_DURATION * sizeof(uint32_t));
     uint32_t count = 0;
 
     audio_i2s_t my_config;
@@ -132,36 +125,16 @@ int main() {
     printf("After writing to gain: %08x\n", audio_i2s_get_reg(&my_config, AUDIO_I2S_GAIN));
     
 
-
-    // audio_i2s_release(&my_config);
-
-    // return 0;
-
-
     printf("Initialized audio_i2s\n");
     printf("Starting audio_i2s_recv\n");
 
     for (int i = 0; i < TRANSFER_RUNS; i++) {
         int32_t *samples = audio_i2s_recv(&my_config);
         memcpy(frames[i], samples, TRANSFER_LEN*sizeof(uint32_t));
-
-        for (int j = 0; j < TRANSFER_LEN; j++) {
-            buffer[count] = frames[i][j];
-            count++;
-        }
-
         parsemem(frames[i], TRANSFER_LEN);
-
     }
 
-    create_wav("wav_test.wav", NUM_CHANNELS*SAMPLE_RATE*RECORD_DURATION, NUM_CHANNELS, buffer, SAMPLE_RATE, BPS);
 
-    // for (int i = 0; i < TRANSFER_RUNS; i++) {
-        // printf("Frame %d:\n", i);
-        // parsemem(frames[i], TRANSFER_LEN);
-        // printf("==============================\n");
-    // }
-    
     audio_i2s_release(&my_config);
     fclose(fptr);
     return 0;
