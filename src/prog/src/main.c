@@ -88,7 +88,7 @@ void exportTxt(void* virtual_address, int word_count) {
 int main(int argc, char** argv) {
     char *mode = argv[1];
     char *output;
-    if (mode = "-db") {
+    if (strcmp(mode, "-db") == 0) {
         output = argv[2];
     } else {
         output = argv[1];
@@ -126,7 +126,7 @@ int main(int argc, char** argv) {
         exportTxt(frames[i], TRANSFER_LEN);
     }
 
-    if (mode = "-db") {
+    if (strcmp(mode, "-db") == 0) {
         for (int i = 0; i < TRANSFER_RUNS; i++) {
             printf("Frame %d:\n", i);
             parsemem(frames[i], TRANSFER_LEN);
